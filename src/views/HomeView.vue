@@ -29,15 +29,21 @@ const routePath = useRoute().fullPath
   <main>
     <!-- see main.scss v-enter-* style -->
     <Transition><HelloWorld v-if="toggle" /></Transition>
-    <a-button @click="toggle = !toggle">Toggle Hello World</a-button>
+    <a-button @click="toggle = !toggle" data-test="toggle-btn">Toggle Hello World</a-button>
     <h1>Example Application Practice</h1>
     <section id="example-practice">
-      <a-button @click="componentToRender = components.COUNTER">Counter</a-button>
-      <a-button @click="componentToRender = components.CRUD">Crud</a-button>
-      <a-button @click="componentToRender = components.TEMPERATURE_CONVERTER"
+      <a-button @click="componentToRender = components.COUNTER" data-test="counter-btn"
+        >Counter</a-button
+      >
+      <a-button @click="componentToRender = components.CRUD" data-test="crud-btn">Crud</a-button>
+      <a-button
+        @click="componentToRender = components.TEMPERATURE_CONVERTER"
+        data-test="converter-btn"
         >Temperature Converter</a-button
       >
-      <a-button @click="componentToRender = components.FLIGHT_BOOKER">Flight Booker</a-button>
+      <a-button @click="componentToRender = components.FLIGHT_BOOKER" data-test="flight-btn"
+        >Flight Booker</a-button
+      >
     </section>
     <component :is="componentToRender"></component>
   </main>

@@ -26,7 +26,7 @@ export default {
     <p id="double-count">{{ counterStore.doubleCount }}</p>
     <p id="double-count-plus-one">{{ counterStore.doublePlusOne() }}</p>
     <!-- v-bind without an argument will bind all the attrs -->
-    <a-button type="primary" @click="counterStore.increment" v-bind="$attrs" id="increment-btn"
+    <a-button type="primary" @click="counterStore.increment()" v-bind="$attrs" id="increment-btn"
       >Increment</a-button
     >
     <p>{{ counterStore.hello }}</p>

@@ -1,6 +1,6 @@
 import './assets/main.scss'
 
-import { createApp, ref, type Ref } from 'vue'
+import { createApp, type Ref } from 'vue'
 import { createPinia } from 'pinia'
 import { HelloPlugin } from './stores/plugins/hello'
 import App from './App.vue'
