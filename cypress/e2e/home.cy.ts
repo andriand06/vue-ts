@@ -22,5 +22,6 @@ describe('Home View Test', () => {
 
     cy.getByData('flight-btn').click()
     cy.contains('button', 'Book')
+    
   })
 })

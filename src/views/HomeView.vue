@@ -1,17 +1,20 @@
 <script setup lang="ts">
-import { ref, type Component } from 'vue'
+import { ref, type Component, Transition } from 'vue'
 import { useRoute } from 'vue-router'
 import Counter from '../components/Counter.vue'
 import CrudForm from '../components/CrudForm.vue'
 import TemperatureConverter from '../components/TemperatureConverter.vue'
 import FlightBooker from '../components/FlightBooker.vue'
 import HelloWorld from '../components/HelloWorld.vue'
-import { Transition } from 'vue'
+import Timer from '../components/Timer.vue'
+import Todo from '../components/Todo.vue'
 interface Components {
   COUNTER: Component
   CRUD: Component
   TEMPERATURE_CONVERTER: Component
   FLIGHT_BOOKER: Component
+  TIMER: Component
+  TODO: Component
 }
 const toggle = ref(false)
 
@@ -19,7 +22,9 @@ const components: Components = {
   COUNTER: Counter,
   CRUD: CrudForm,
   TEMPERATURE_CONVERTER: TemperatureConverter,
-  FLIGHT_BOOKER: FlightBooker
+  FLIGHT_BOOKER: FlightBooker,
+  TIMER: Timer,
+  TODO: Todo
 }
 const componentToRender = ref(components.COUNTER)
 const routePath = useRoute().fullPath
@@ -44,6 +49,8 @@ const routePath = useRoute().fullPath
       <a-button @click="componentToRender = components.FLIGHT_BOOKER" data-test="flight-btn"
         >Flight Booker</a-button
       >
+      <a-button @click="componentToRender = components.TIMER" data-test="timer-btn">Timer</a-button>
+      <a-button @click="componentToRender = components.TODO" data-test="todo-btn">Todo</a-button>
     </section>
     <component :is="componentToRender"></component>
   </main>

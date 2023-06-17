@@ -5,6 +5,7 @@ interface Props {
 }
 withDefaults(defineProps<Props>(), { msg: 'Hello!' })
 const textSize = inject<number>('textSize')
+
 </script>
 
 <template>

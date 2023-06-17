@@ -45,6 +45,7 @@ describe('Counter functionality & interaction with counter store', () => {
   it('when user A click reset, will fires a reset event with value become 0', async () => {
     const store = useCounterStore()
     await wrapper.get('#reset-btn').trigger('click')
+
     expect(store.$reset).toHaveBeenCalledTimes(1)
   })
 })
